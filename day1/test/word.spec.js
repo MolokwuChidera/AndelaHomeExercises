@@ -16,9 +16,9 @@ describe('words()',function(){
   });
 });
 describe('words()',function(){
-  it('should include special characters', function() {
-    let countWords = { olly: 1, '&%': 1, is: 1, a: 1, boy: 1 };
-    expect(words('olly &% is a boy')).to.deep.equal(countWords);
+  it('should remove special characters', function() {
+    let countWords = { olly: 1, is: 1, a: 1, boy: 1 };
+    expect(words('olly is a boy')).to.deep.equal(countWords);
   });
 });
 describe('words()',function(){

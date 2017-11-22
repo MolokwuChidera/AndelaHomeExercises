@@ -12,6 +12,10 @@ module.exports=function words(input){
     
     splitwords.forEach(function(word){
       word = word.replace(/\s+/g,"");
+      word = word.replace(/[^a-z0-9 ]/g, "");
+      if (word ==="") {
+    return {};
+  }
       if(objCount.hasOwnProperty(word)){
         objCount[word]++;
         
