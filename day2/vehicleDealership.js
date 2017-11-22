@@ -7,15 +7,15 @@ class VehicleDealership {// Creation of class
     
   }
  
- setvehicleAvailable(vehicleAvailable){
+ getvehicleName(){
   
- this.vehicleAvailable=vehicleAvailable;
+ return this.vehicleName;
    
   }
   
-  getvehicleAvailable(){
+  getnumberAvailable(){
     
-    return this.vehicleAvailable;
+    return this.numberAvailable;
   }
   
   getvehicleDetails(vehicleName,numberAvailable) {
@@ -27,19 +27,29 @@ class VehicleDealership {// Creation of class
 }
 
 class Car extends VehicleDealership { //Example of inheritance
-  constructor(vehicleBrand, vehicleName) {
+  constructor(vehicleBrand, vehicleName,vehicleType) {
     super(vehicleBrand, vehicleName);
-    this._namesVehicles = [];
-  }
-
-  addcar(vehicle) {
-    this._namesVehicles.push(vehicle);
     
+  }
+getvehicleType(){
+
+  return this.vehicleType;
+}
+  getCar(vehicle) {
+    return this.VehicleName + " is a car";
+    
+  }
+  
+  getavailableNumber(){
+    return "Number available is "+this.numberAvailable;
   }
   
 }
 let r=new VehicleDealership('Toyota',2);
- console.log(r.getvehicleDetails());
+r.getvehicleType();
+r.getavailableNumber();
+r.getCar();
+
 
 
 
