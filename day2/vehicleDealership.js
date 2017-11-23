@@ -72,7 +72,7 @@ class Motorcycle extends VehicleDealership {
 const cycle = new Motorcycle('Okada', "Motorcycle"," Suzuki", 50000);
 
 const car = new Car('Corolla', "Car", "Toyota", 50000);
-const vehicle= 
+
 
 
 
