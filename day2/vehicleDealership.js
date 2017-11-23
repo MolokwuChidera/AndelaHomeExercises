@@ -1,57 +1,82 @@
-class VehicleDealership {// Creation of class
+
  
-  constructor(vehicleName,numberAvailable){
-    this.vehicleName = vehicleName;//use of variables
-    this.numberAvailable = numberAvailable;
+"use strict";
+  class VehicleDealership {
+
+    constructor(vehicleName, vehicleType,brand) {
+        this.vehicleName = vehicleName;
+        this.vehicleType = vehicleType;
+        this.brand = brand;
+        
+    }
+
+    typeofVehicle() {
+        return `Name of vehicle is ${this.vehicleName} it is a  ${this.vehicleType},`;
+    }
+    vehicleBrand() {
+        return `The brand is ${this.brand} ${this.vehicleName}`;
+    }
     
-    
-  }
- 
- getvehicleName(){
-  
- return this.vehicleName;
+    vehicleDetails(){
+      return this.typeofVehicle + this.vehicleBrand;
+    }
    
-  }
-  
-  getnumberAvailable(){
+}
+class Car extends VehicleDealership {
+    constructor(vehicleName, vehicleType,brand,_price) {
+        super(vehicleName,vehicleType,brand);
+        this._price = _price;
+    }
+    typeofCar() {
+        return `Name of car is ${this.vehicleName} it is a  ${this.vehicleType}`;
+    }
+    carBrand() {
+        return `The brand is ${this.vehicleName} ${this.vehicleType}`;
+    }
+    vehicleDetails(){
+      return `Name of car is ${this.vehicleName} it is a  ${this.vehicleType},The brand is ${this.brand} ${this.vehicleName}`;
+    }
     
-    return this.numberAvailable;
-  }
-  
-  getvehicleDetails(vehicleName,numberAvailable) {
-     return `${this.vehicleName} ${this.numberAvailable}`;
-  }
-  
- 
-  
+    carPrice(){
+    
+      return `${this.brand} ${this.vehicleName} is # ${this._price}`;
+    }
 }
 
-class Car extends VehicleDealership { //Example of inheritance
-  constructor(vehicleBrand, vehicleName,vehicleType) {
-    super(vehicleBrand, vehicleName);
+
+class Motorcycle extends VehicleDealership {
+
+    constructor(vehicleName,vehicleType,brand, _price) {
+        super(vehicleName,vehicleType,brand);
+        this._price = _price;
+    }
+    typeofCycle() {
+        return `Name of car is ${this.vehicleName} it is a  ${this.vehicleType}`;
+    }
+    cycleBrand() {
+        return `The brand is ${this.vehicleName} ${this.vehicleType}`;
+    }
+    cycleDetails(){
+      return `Name of Motorcycle is ${this.vehicleName} it is a  ${this.vehicleType},The brand is ${this.brand} ${this.vehicleName}`;
+    }
     
-  }
-getvehicleType(){
-
-  return this.vehicleType;
-}
-  getCar(vehicle) {
-    return this.VehicleName + " is a car";
+    cyclePrice(){
     
-  }
-  
-  getavailableNumber(){
-    return "Number available is "+this.numberAvailable;
-  }
-  
+      return `${this.brand} ${this.vehicleName} is # ${this._price}`;
+    }
+
 }
-let r=new VehicleDealership('Toyota',2);
-r.getvehicleType();
-r.getavailableNumber();
-r.getCar();
 
 
 
+const cycle = new Motorcycle('Okada', "Motorcycle"," Suzuki", 50000);
+
+const car = new Car('Corolla', "Car", "Toyota", 50000);
+const vehicle= 
 
 
+
+cycle.cycleDetails();
+car.vehicleDetails();
+car.carPrice();
 
